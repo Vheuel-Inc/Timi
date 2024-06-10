@@ -1,11 +1,11 @@
 {
-  "name": "skyname",
+  "name": "biru",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "description": "Free, unique usernames for Bluesky",
-  "repository": "https://gitlab.com/darnfish/skyname.git",
-  "author": "William Gibson <william@darn.fish>",
+  "description": "Handle unik dan gratis untuk Bluesky",
+  "repository": "https://github.com/vheuel/biru.git",
+  "author": "Vheuel Roman <contact@vheuel.com>",
   "scripts": {
     "start": "next start",
     "dev": "next dev",
