@@ -111,10 +111,10 @@ export default function App() {
 	}, [server, email, password, setSession, setUser, setLoggingIn, setLoginError])
 
 	return (
-		<div className="bg-blue-100 w-screen h-screen flex flex-col items-center my-5">
+		<div className="w-screen h-screen flex flex-col items-center my-5">
 			<div className="flex flex-col mx-5 md:w-1/2 xl:w-1/3 overflow-scroll">
 				<div className="flex flex-row mb-3">
-					<div>
+					<div className="bg-blue-100">
 						<p className="text-3xl font-bold uppercase text-blue-200">Biru</p>
 						<p>Handle unik dan gratis untuk Bluesky</p>
 					</div>
