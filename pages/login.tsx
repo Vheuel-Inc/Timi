@@ -136,7 +136,7 @@ export default function App() {
 						onChange={e => setServer(e.target.value)}
 					/>
 					{isLookingUpServer && (
-						<p className="text-center text-sm opacity-50">Mencari server...</p>
+						<p className="text-center text-sm opacity-50">Memeriksa server...</p>
 					)}
 					{serverError && (
 						<p className="text-red-500">Server Tidak Ditemukan</p>
