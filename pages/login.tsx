@@ -115,15 +115,15 @@ export default function App() {
 			<div className="flex flex-col mx-5 md:w-1/2 xl:w-1/3 overflow-scroll">
 				<div className="flex flex-row mb-3">
 					<div>
-						<p className="text-3xl font-bold">Biru<span className="uppercase align-super text-xs ml-1 text-red-500">BETA</span></p>
-						<p>Free, unique usernames for Bluesky</p>
+						<p className="text-3xl font-bold uppercase text-blue-500">Biru</p>
+						<p>Handle unik & gratis untuk Bluesky</p>
 					</div>
 				</div>
 				<div className="bg-black/5 px-5 py-3 mb-3">
-					<p className="text-xl font-bold mb-2">Login</p>
+					<p className="text-xl font-bold mb-2">Masuk</p>
 					<Input
 						className="w-full"
-						placeholder="Server (e.g. bsky.social)"
+						placeholder="Server (Contoh: bsky.social)"
 						value={server}
 						onClick={() => {
 							if(!serverDetails)
@@ -136,15 +136,15 @@ export default function App() {
 						onChange={e => setServer(e.target.value)}
 					/>
 					{isLookingUpServer && (
-						<p className="text-center text-sm opacity-50">looking up your server...</p>
+						<p className="text-center text-sm opacity-50">Mencari server...</p>
 					)}
 					{serverError && (
-						<p className="text-red-500">Error finding server: {serverError.toString()}</p>
+						<p className="text-red-500">Server Tidak Ditemukan</p>
 					)}
 					{serverDetails  && (
 						<div className="flex flex-col">
 							<Input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
-							<Input type="password" placeholder="App Password" value={password} onChange={e => setPassword(e.target.value)} />
+							<Input type="password" placeholder="Kata sandi aplikasi" value={password} onChange={e => setPassword(e.target.value)} />
 							<p className="text-sm font-semibold">Privacy</p>
 							<p className="text-sm opacity-75 mb-1">Skyname does not store any of your Bluesky credentials on its server. Credentials, such as your access token are stored locally and sent to the server for direct verification with your Bluesky server.</p>
 							<p className="text-sm opacity-75 mb-2">We only store is your did (identifier), registered username (e.g. example.tired.io) and previous username (e.g. @example.bsky.social). By logging in below, you agree that you're okay with this.</p>
