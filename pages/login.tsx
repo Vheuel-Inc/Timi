@@ -144,6 +144,7 @@ export default function App() {
 					{serverDetails  && (
 						<div className="flex flex-col">
 							<Input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+<p className="text-xs opacity-75"><a href="https://bsky.app/settings/app-passwords">Buat kata sandi aplikasi</a> untuk masuk</p>
 							<Input type="password" placeholder="Kata sandi aplikasi" value={password} onChange={e => setPassword(e.target.value)} />
 							<p className="text-sm font-semibold">Privacy</p>
 							<p className="text-sm opacity-75 mb-1">Skyname does not store any of your Bluesky credentials on its server. Credentials, such as your access token are stored locally and sent to the server for direct verification with your Bluesky server.</p>
