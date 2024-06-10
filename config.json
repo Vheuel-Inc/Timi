@@ -1,17 +1,45 @@
 {
     "domains": {
         "bsky.makeup": {
-            "provider": "cloudflare",
+            "provider": "bsky_makeup",
             "zoneId": "50f1443d50806107d69b48ed4de3cbd2",
+            "disallowedSubdomains": [
+                "vheuel"
+            ]
+        },
+        "bsky.today": {
+            "provider": "bsky_today",
+            "zoneId": "b62e92fbedba0215ed4145f3bf729887",
+            "disallowedSubdomains": [
+                "vheuel"
+            ]
+        },
+        "skeets.top": {
+            "provider": "skeets_top",
+            "zoneId": "06f0642e59242f820d16231e2dab9b6b",
             "disallowedSubdomains": [
                 "vheuel"
             ]
         }
     },
     "providers": {
-        "cloudflare": {
+        "bsky_makeup": {
             "service": "cloudflare",
             "token": "n1AVHfhWPTewLYWS_VZSGBSE7F8dmAu3xePLiRum",
+            "attestation": {
+                "verified": true
+            }
+        },
+        "bsky_today": {
+            "service": "cloudflare",
+            "token": "WUPdCyUsXFdaB7kZy646ZAOkJmCCH1AouIwxSidv",
+            "attestation": {
+                "verified": true
+            }
+        },
+        "skeets_top": {
+            "service": "cloudflare",
+            "token": "3zCX-MviIpW57ifLjL9wS2bk1kgx6vS2bYsW81s2",
             "attestation": {
                 "verified": true
             }
