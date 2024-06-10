@@ -26,7 +26,7 @@ export default function({ Component, pageProps }) {
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://bsky.makeup/" />
-        <meta property="twitter:title" content="Skyname" />
+        <meta property="twitter:title" content="Biru" />
         <meta property="twitter:description" content="Handle unik dan gratis untuk Bluesky"/>
         <meta property="twitter:image" content="https://bsky.makeup/banner.png" />
           
