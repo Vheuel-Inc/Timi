@@ -113,7 +113,7 @@ export default function App() {
 	return (
 		<div className="w-screen h-screen flex flex-col items-center my-5">
 			<div className="flex flex-col mx-5 md:w-1/2 xl:w-1/3 overflow-scroll">
-				<div className="flex flex-row mb-3">
+				<div className="flex flex-row mb-1">
 					<div>
 						<p className="text-3xl font-bold uppercase text-blue-200">Biru</p>
 						<p>Handle unik dan gratis untuk Bluesky</p>
@@ -158,7 +158,7 @@ Kami tidak menyimpan kredensial Bluesky Anda di server kami. Kredensial seperti
 					)}
 				</div>
 				
-				<p className="text-sm opacity-75 mt-3">Dibuat oleh <a href="https://bsky.app/profile/did:plc:ivvkfsndujdk2vo5zd2gn2e6">Vheüel</a> & <a href="https://t.me/blueskyindo">Friends</a> | <a href="https://cwallet.com/t/LRJVXY13">Donasi</a></p>
+				<p className="text-sm opacity-75 mt-3">Dibuat oleh <a href="https://bsky.app/profile/did:plc:ivvkfsndujdk2vo5zd2gn2e6" className="text-blue-500">Vheüel</a> & <a href="https://t.me/blueskyindo" className="text-blue-500">Friends</a> | <a href="https://cwallet.com/t/LRJVXY13" className="text-blue-500">Donasi</a></p>
 			</div>
 		</div>
 	)
