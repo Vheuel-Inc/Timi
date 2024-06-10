@@ -194,7 +194,7 @@ export default function Index() {
 				{defaultUsername && (
 					<div className={`bg-black/5 px-3 py-2 mb-2`}>
 						<p className="text-lg">{defaultUsername}</p>
-						<p className="text-sm">Default Handle</p>
+						<p className="text-sm">Handle sebelumnya</p>
 						<p className="text-sm">{defaultUsername === user.handle ? <a className="text-green-500">Aktif</a> : <a className={`font-semibold ${!!switchingToUsernameId ? 'cursor-not-allowed opacity-25' : 'hover:underline cursor-pointer text-blue-500'} ${switchingToUsernameId === 'default' ? 'cursor-wait' : ''}`} onClick={() => !!switchingToUsernameId ? {} : switchToUsername('default')}>{switchingToUsernameId === 'default' ? 'Mengganti...' : 'Tetapkan sebagai utama'}</a>}</p>
 					</div>
 				)}
@@ -220,7 +220,7 @@ export default function Index() {
 										<div className={`bg-black/5 px-3 py-2 ${isLastUsername ? '' : 'mb-2'}`} key={username.id}>
 											<p className="text-lg">{usernameString}</p>
 											<p className="text-sm">{isUsernameInUse ? <a className="text-green-300">Aktif</a> : <a className={`font-semibold ${isSwitchingToSomeUsername ? 'cursor-not-allowed opacity-25' : 'hover:underline cursor-pointer text-blue-300'} ${isSwitchingToUsername ? 'cursor-wait' : ''}`} onClick={() => isSwitchingToSomeUsername ? {} : switchToUsername(username.id)}>{isSwitchingToUsername ? 'Mengganti...' : 'Tetapkan sebagai utama'}</a>} &bull;
- <a className={`text-red-500 ${isReleasingSomeUsername ? 'cursor-not-allowed' : 'cursor-pointer hover:underline'}`} onClick={() => isReleasingSomeUsername ? {} : releaseUsername(username.id)}>{isReleasingUsername ? 'Menghapus...' : 'Hapus'}</a> <br/> <span className="opacity-75">Terdaftar pada {new Date(username.createdAt).toDateString()} </span>
+ <a className={`text-red-500 ${isReleasingSomeUsername ? 'cursor-not-allowed' : 'cursor-pointer hover:underline'}`} onClick={() => isReleasingSomeUsername ? {} : releaseUsername(username.id)}>{isReleasingUsername ? 'Menghapus...' : 'Hapus'}</a> <br/> <span className="opacity-75">terdaftar pada {new Date(username.createdAt).toDateString()} </span>
 </p>
 										</div>
 									)
