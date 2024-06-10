@@ -122,7 +122,7 @@ export default function App() {
 				<div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden mb-3 p-4">
 					<p className="text-xl font-bold mb-2">Masuk</p>
 					<Input
-						className="w-full bg-blue-100"
+						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 						placeholder="Server (Contoh: bsky.social)"
 						value={server}
 						onClick={() => {
@@ -143,14 +143,14 @@ export default function App() {
 					)}
 					{serverDetails  && (
 						<div className="flex flex-col">
-							<Input className="bg-blue-100" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+							<Input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
 <p className="text-xs opacity-75"><a href="https://bsky.app/settings/app-passwords" className="text-blue-500">Buat kata sandi aplikasi</a> untuk masuk</p>
-							<Input className="bg-blue-100" type="password" placeholder="Kata sandi aplikasi" value={password} onChange={e => setPassword(e.target.value)} />
+							<Input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="Kata sandi aplikasi" value={password} onChange={e => setPassword(e.target.value)} />
 							<p className="text-sm mt-3 font-semibold text-red-500">Catatan</p>
 							<p className="text-sm opacity-75 mb-1">
 Kami tidak menyimpan kredensial Bluesky Anda di server kami. Kredensial seperti email & kata sandi aplikasi tersimpan secara lokal diperangkat anda dan hanya dikirimkan ke server untuk verifikasi langsung dengan server Bluesky Anda.</p>
 							<p className="text-sm opacity-75 mb-2">Yang kami simpan hanyalah domain value/did (identifier) Anda, handle yang terdaftar (misalnya @contoh.bsky.makeup) dan handle sebelumnya (misalnya @contoh.bsky.social). <br/> Dengan menekan tombol <b>MASUK</b> di bawah ini, Anda menyetujui bahwa Anda tidak keberatan dengan hal ini.</p>
-							<Button onClick={login} disabled={!canLogin || isLoggingIn}>{isLoggingIn ? 'Masuk...' : 'Masuk'}</Button>
+							<Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={login} disabled={!canLogin || isLoggingIn}>{isLoggingIn ? 'Masuk...' : 'Masuk'}</Button>
 							{loginError && (
 								<p className="text-red-500 mt-2">Terjadi kesalahan saat memverifikasi Akun</p>
 							)}
