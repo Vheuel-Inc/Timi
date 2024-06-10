@@ -176,7 +176,7 @@ export default function Index() {
 	const usernameOwner = domains[selectedDomain]
 
 	return (
-		<div className="w-screen h-screen flex flex-col items-center my-5">
+		<div className="w-screen h-screen flex flex-col items-center px-3 py-2 my-5">
 			<div className="flex flex-col mx-5 md:w-1/2 xl:w-1/3 overflow-scroll">
 				<div className="flex flex-row mb-3">
 					<div>
@@ -235,7 +235,7 @@ export default function Index() {
 					)}
 				</div>
 				<div className="bg-black/5 px-5 py-3">
-					<p className="text-xl font-bold mb-2">Daftarkan handle</p>
+				
 					{(usernames?.length || 0) < MAX_USERNAMES ? (
 						<div className="w-full">
 							<div className="w-full flex flex-row">
@@ -252,7 +252,7 @@ export default function Index() {
 								<div className="mb-2">
 									{usernameOwner.verified ? (
 										<div className="text-white bg-green-500 px-3 py-2 mb-2">
-											<p>Pilih {selectedDomain}</p>
+											<p>{username} Tersedia!</p>
 										</div>
 									) : (
 										<div className="text-white bg-yellow-500 px-3 py-2 mb-2">
@@ -274,7 +274,7 @@ export default function Index() {
 									</div>
 									<div className="flex items-start mb-1">
 										<input className="mt-[5px]" type="checkbox" checked={confirmed} onChange={e => setConfirmed(_confirmed => !_confirmed)}></input>
-										<p className="ml-2 cursor-default" onClick={() => setConfirmed(_confirmed => !_confirmed)}>Saya menyadari dengan mendaftarkan <b>{username}</b> di <span className="text-blue-100">BIRU</span> dengan mengklik tombol di bawah, saya mungkin kehilangan handle saya saat ini secara permanen, dan saya tidak dijamin akan menyimpan handle ini selamanya. </p>
+										<p className="ml-2 cursor-default" onClick={() => setConfirmed(_confirmed => !_confirmed)}>Saya menyadari dengan mendaftarkan <b>{username}</b> di <span className="text-blue-200">BIRU</span> dengan mengklik tombol di bawah, saya mungkin kehilangan handle saya saat ini secara permanen, dan saya tidak dijamin akan menyimpan handle {username} selamanya. </p>
 									</div>
 									<div className="flex items-start mb-2">
 										<input className="mt-[5px]" type="checkbox" checked={setAsPrimaryUsername} onChange={e => setSetAsPrimaryUsername(_primary => !_primary)}></input>
