@@ -119,10 +119,10 @@ export default function App() {
 						<p>Handle unik dan gratis untuk Bluesky</p>
 					</div>
 				</div>
-				<div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden mb-3">
+				<div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden mb-3 p-4">
 					<p className="text-xl font-bold mb-2">Masuk</p>
 					<Input
-						className="w-full"
+						className="w-full bg-blue-100"
 						placeholder="Server (Contoh: bsky.social)"
 						value={server}
 						onClick={() => {
@@ -143,9 +143,9 @@ export default function App() {
 					)}
 					{serverDetails  && (
 						<div className="flex flex-col">
-							<Input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+							<Input className="bg-blue-100" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
 <p className="text-xs opacity-75"><a href="https://bsky.app/settings/app-passwords" className="text-blue-500">Buat kata sandi aplikasi</a> untuk masuk</p>
-							<Input type="password" placeholder="Kata sandi aplikasi" value={password} onChange={e => setPassword(e.target.value)} />
+							<Input className="bg-blue-100" type="password" placeholder="Kata sandi aplikasi" value={password} onChange={e => setPassword(e.target.value)} />
 							<p className="text-sm mt-3 font-semibold text-red-500">Catatan</p>
 							<p className="text-sm opacity-75 mb-1">
 Kami tidak menyimpan kredensial Bluesky Anda di server kami. Kredensial seperti email & kata sandi aplikasi tersimpan secara lokal diperangkat anda dan hanya dikirimkan ke server untuk verifikasi langsung dengan server Bluesky Anda.</p>
