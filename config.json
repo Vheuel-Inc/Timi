@@ -1,0 +1,20 @@
+{
+    "domains": {
+        "bsky.makeup": {
+            "provider": "cloudflare",
+            "zoneId": "50f1443d50806107d69b48ed4de3cbd2",
+            "disallowedSubdomains": [
+                "vheuel"
+            ]
+        }
+    },
+    "providers": {
+        "cloudflare": {
+            "service": "cloudflare",
+            "token": "n1AVHfhWPTewLYWS_VZSGBSE7F8dmAu3xePLiRum",
+            "attestation": {
+                "verified": true
+            }
+        }
+    }
+}

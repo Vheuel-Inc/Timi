@@ -1,0 +1,33 @@
+---
+version: "3.8"
+
+services:
+  skyname:
+    container_name: skyname
+    image: ghcr.io/darnfish/skyname:main
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    environment:
+      BIRU_CONFIG: "ewogICAgImRvbWFpbnMiOiB7CiAgICAgICAgImJza3kubWFrZXVwIjogewogICAgICAgICAgICAicHJvdmlkZXIiOiAiY2xvdWRmbGFyZSIsCiAgICAgICAgICAgICJ6b25lSWQiOiAiNTBmMTQ0M2Q1MDgwNjEwN2Q2OWI0OGVkNGRlM2NiZDIiLAogICAgICAgICAgICAiZGlzYWxsb3dlZFN1YmRvbWFpbnMiOiBbCiAgICAgICAgICAgICAgICAidmhldWVsIgogICAgICAgICAgICBdCiAgICAgICAgfQogICAgfSwKICAgICJwcm92aWRlcnMiOiB7CiAgICAgICAgImNsb3VkZmxhcmUiOiB7CiAgICAgICAgICAgICJzZXJ2aWNlIjogImNsb3VkZmxhcmUiLAogICAgICAgICAgICAidG9rZW4iOiAibjFBVkhmaFdQVGV3TFlXU19WWlNHQlNFN0Y4ZG1BdTN4ZVBMaVJ1bSIsCiAgICAgICAgICAgICJhdHRlc3RhdGlvbiI6IHsKICAgICAgICAgICAgICAgICJ2ZXJpZmllZCI6IHRydWUKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KfQo="
+      POSTGRES_URL: "postgres://default:o91NjHJrPizU@ep-round-sun-a1h210od-pooler.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require"
+      # TG_BOT_TOKEN: ""
+      # TG_CHAT_ID: ""
+    depends_on:
+      - skyname-postgres
+    networks:
+      - skyname
+  skyname-postgres:
+    container_name: skyname-postgres
+    image: postgres
+    restart: unless-stopped
+    volumes:
+      - "/your/data/dir:/var/lib/postgresql/data:rw"
+    environment:
+      POSTGRES_DB: "verceldb"
+      POSTGRES_USER: "default"
+      POSTGRES_PASSWORD: "o91NjHJrPizU"
+    networks:
+      - skyname
+networks:
+  skyname:
