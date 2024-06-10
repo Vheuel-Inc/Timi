@@ -156,7 +156,7 @@ export default function App() {
 						</div>
 					)}
 				</div>
-				<p className="text-sm opacity-75 mt-2"><a href="https://github.com/darnfish/skyname">View source on GitHub</a></p>
+				
 			</div>
 		</div>
 	)
