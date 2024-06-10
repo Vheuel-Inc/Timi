@@ -178,8 +178,8 @@ export default function Index() {
 	return (
 		<div className="w-screen h-screen flex flex-col items-center px-3 py-2 my-5">
 			<div className="flex flex-col mx-5 md:w-1/2 xl:w-1/3 overflow-scroll">
-				<div className="flex flex-row mb-3">
-					<div className="mx-3 my-2">
+				<div className="mx-3 my-2 flex flex-row mb-3">
+					<div>
 					<p className="text-3xl text-blue-100 font-bold">BIRU</p>
 						<p>Handle unik dan gratis untuk Bluesky</p>
 					</div>
@@ -195,7 +195,7 @@ export default function Index() {
 					<div className={`bg-black/5 px-3 py-2 mb-2`}>
 						<p className="text-lg">{defaultUsername}</p>
 						<p className="text-sm">Handle sebelumnya</p>
-						<p className="text-sm">{defaultUsername === user.handle ? <a className="text-green-500">Aktif</a> : <a className={`font-semibold ${!!switchingToUsernameId ? 'cursor-not-allowed opacity-25' : 'hover:underline cursor-pointer text-blue-500'} ${switchingToUsernameId === 'default' ? 'cursor-wait' : ''}`} onClick={() => !!switchingToUsernameId ? {} : switchToUsername('default')}>{switchingToUsernameId === 'default' ? 'Mengganti...' : 'Tetapkan sebagai utama'}</a>}</p>
+						<p className="text-sm">{defaultUsername === user.handle ? <a className="text-green-300">Aktif</a> : <a className={`font-semibold ${!!switchingToUsernameId ? 'cursor-not-allowed opacity-25' : 'hover:underline cursor-pointer text-blue-300'} ${switchingToUsernameId === 'default' ? 'cursor-wait' : ''}`} onClick={() => !!switchingToUsernameId ? {} : switchToUsername('default')}>{switchingToUsernameId === 'default' ? 'Mengganti...' : 'Tetapkan sebagai utama'}</a>}</p>
 					</div>
 				)}
 				<div className="bg-black/5 px-5 py-3 mb-3">
@@ -219,8 +219,7 @@ export default function Index() {
 									return (
 										<div className={`bg-black/5 px-3 py-2 ${isLastUsername ? '' : 'mb-2'}`} key={username.id}>
 											<p className="text-lg">{usernameString}</p>
-											<p className="text-sm">{isUsernameInUse ? <a className="text-green-300">Aktif</a> : <a className={`font-semibold ${isSwitchingToSomeUsername ? 'cursor-not-allowed opacity-25' : 'hover:underline cursor-pointer text-blue-300'} ${isSwitchingToUsername ? 'cursor-wait' : ''}`} onClick={() => isSwitchingToSomeUsername ? {} : switchToUsername(username.id)}>{isSwitchingToUsername ? 'Mengganti...' : 'Tetapkan sebagai utama'}</a>} &bull;
- <a className={`text-red-500 ${isReleasingSomeUsername ? 'cursor-not-allowed' : 'cursor-pointer hover:underline'}`} onClick={() => isReleasingSomeUsername ? {} : releaseUsername(username.id)}>{isReleasingUsername ? 'Menghapus...' : 'Hapus'}</a> <br/> <span className="opacity-75">terdaftar pada {new Date(username.createdAt).toDateString()} </span>
+											<p className="text-sm">{isUsernameInUse ? <a className="text-green-300">Aktif</a> : <a className={`font-semibold ${isSwitchingToSomeUsername ? 'cursor-not-allowed opacity-25' : 'hover:underline cursor-pointer text-blue-300'} ${isSwitchingToUsername ? 'cursor-wait' : ''}`} onClick={() => isSwitchingToSomeUsername ? {} : switchToUsername(username.id)}>{isSwitchingToUsername ? 'Mengganti...' : 'Tetapkan sebagai utama'}</a>} &bull; <a className={`text-red-500 ${isReleasingSomeUsername ? 'cursor-not-allowed' : 'cursor-pointer hover:underline'}`} onClick={() => isReleasingSomeUsername ? {} : releaseUsername(username.id)}> {isReleasingUsername ? 'Menghapus...' : 'Hapus'}</a> <br/> <span className="opacity-75">terdaftar pada {new Date(username.createdAt).toDateString()} </span>
 </p>
 										</div>
 									)
