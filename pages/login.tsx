@@ -111,7 +111,7 @@ export default function App() {
 	}, [server, email, password, setSession, setUser, setLoggingIn, setLoginError])
 
 	return (
-		<div className="w-screen h-screen flex flex-col items-center my-5">
+		<div className="bg-blue-100 w-screen h-screen flex flex-col items-center my-5">
 			<div className="flex flex-col mx-5 md:w-1/2 xl:w-1/3 overflow-scroll">
 				<div className="flex flex-row mb-3">
 					<div>
@@ -144,7 +144,7 @@ export default function App() {
 					{serverDetails  && (
 						<div className="flex flex-col">
 							<Input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
-<p className="text-xs opacity-75"><a href="https://bsky.app/settings/app-passwords" className="text-green-500">Buat kata sandi aplikasi</a> untuk masuk</p>
+<p className="text-xs opacity-75"><a href="https://bsky.app/settings/app-passwords" className="text-blue-500">Buat kata sandi aplikasi</a> untuk masuk</p>
 							<Input type="password" placeholder="Kata sandi aplikasi" value={password} onChange={e => setPassword(e.target.value)} />
 							<p className="text-sm mt-3 font-semibold text-red-500">Catatan</p>
 							<p className="text-sm opacity-75 mb-1">
