@@ -1,16 +1,16 @@
-# Skyname
-Register and own your own free, unique usernames for Bluesky
+# Biru
+Daftarkan dan miliki nama pengguna unik dan gratis Anda sendiri untuk Bluesky 
 
-## Why?
-Skyname is a username registrar for Bluesky.
+## Kenapa?
+Biru adalah pendaftar nama pengguna untuk Bluesky. 
 
-Bluesky uses domains as usernames. Since I own the domain darn.fish, I can set it as my username on Bluesky, hence why I am @darn.fish.
+Bluesky menggunakan domain sebagai nama pengguna. Karena saya pemilik domain vheuel.com, saya dapat menetapkannya sebagai nama pengguna saya di Bluesky, itulah sebabnya saya @vheuel.com. 
 
-DNS, specifically a TXT record, is used for verifying domain ownership. Skyname hijacks this process and lets users verify a subdomain on a set of domain names owned by whoever runs a Skyname instance.
+DNS, khususnya data TXT, digunakan untuk memverifikasi kepemilikan domain. Biru membajak proses ini dan memungkinkan pengguna memverifikasi subdomain pada sekumpulan nama domain yang dimiliki oleh siapa pun yang menjalankan instance Biru. 
 
-The official Skyname instance is located at [skyna.me](https://skyna.me). You can find domains such as bsky.cool and bsky.lgbt among others. Anyone can sign up and claim their own <username>.bsky.cool username for free and forever.
+Instance resmi Biru terletak di [bsky.makeup](https://bsky.makeup). Anda dapat menemukan domain seperti bsky.today dan skeets.top. Siapa pun dapat mendaftar dan mengklaim miliknya sendiri<username> Nama pengguna .bsky.makeup gratis dan selamanya. 
 
-If you'd like to add your own domain for anyone to use, email [domains@skyna.me](mailto:domains@skyna.me) to start the process. Alternatively, and more preferrably, you can host your own instances and email [instances@skyna.me](mailto:instances@skyna.me) to be added to a list coming in the not so distant future.
+Jika Anda ingin menambahkan domain Anda sendiri agar dapat digunakan oleh siapa saja, kirim email ke [contact@vheuel.com](mailto:contact@vheuel.com) untuk memulai prosesnya. 
 
 ## Setup
 Clone down the repo and install dependencies:
