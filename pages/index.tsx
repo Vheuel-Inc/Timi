@@ -178,7 +178,7 @@ export default function Index() {
 	return (
 		<div className="w-screen h-screen flex flex-col items-center px-3 py-2 my-5">
 			<div className="flex flex-col mx-5 md:w-1/2 xl:w-1/3 overflow-scroll">
-				<div className="mx-3 my-2 flex flex-row mb-3">
+				<div className="mx-3 my-2 flex flex-row mb-5">
 					<div>
 					<p className="text-3xl text-blue-100 font-bold">BIRU</p>
 						<p>Handle unik dan gratis untuk Bluesky</p>
@@ -260,7 +260,7 @@ export default function Index() {
 											<p>{selectedDomain} dimiliki oleh <a className="underline" href={usernameOwner.usernameUrl}>@{usernameOwner.username}</a>{usernameOwner.attestationUrl ? <>, mereka telah mengirimkan pengesahan untuk menjaga nama pengguna ini tetap hidup  <a className="underline" href={usernameOwner.attestationUrl} target="_blank">Disini</a></> : ''}</p>
 										</div>
 									)}
-									<p className="text-sm font-semibold">Perjanjian Pendaftaran</p>
+									<p className="mt-5 text-sm font-semibold">Perjanjian Pendaftaran</p>
 									<div className="text-sm opacity-75 mb-2">
 										<p>Setelah mengklik tombol di bawah, handle Bluesky Anda akan diperbarui secara otomatis menjadi <b>{username}</b> .</p> 
 										<ul>
