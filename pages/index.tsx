@@ -179,7 +179,7 @@ export default function Index() {
 		<div className="w-screen h-screen flex flex-col items-center px-3 py-2 my-5">
 			<div className="flex flex-col mx-5 md:w-1/2 xl:w-1/3 overflow-scroll">
 				<div className="flex flex-row mb-3">
-					<div>
+					<div className="mx-3 my-2">
 					<p className="text-3xl text-blue-100 font-bold">BIRU</p>
 						<p>Handle unik dan gratis untuk Bluesky</p>
 					</div>
