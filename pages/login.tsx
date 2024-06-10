@@ -119,7 +119,7 @@ export default function App() {
 						<p>Handle unik dan gratis untuk Bluesky</p>
 					</div>
 				</div>
-				<div className="bg-blue-100 px-5 py-3 mb-3">
+				<div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden mb-3">
 					<p className="text-xl font-bold mb-2">Masuk</p>
 					<Input
 						className="w-full"
