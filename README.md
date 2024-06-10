@@ -15,12 +15,12 @@ Jika Anda ingin menambahkan domain Anda sendiri agar dapat digunakan oleh siapa 
 ## Setup
 Clone down the repo and install dependencies:
 ```
-git clone git@github.com:darnfish/skyname.git
-cd skyname
+git clone git@github.com:vheuel/biru.git
+cd biru
 yarn
 ```
 
-You will need to populate `SKYNAME_CONFIG` with a Base64 encoded JSON object to supply your owned domains and DNS providers. Here is a sample:
+You will need to populate `BIRU_CONFIG` with a Base64 encoded JSON object to supply your owned domains and DNS providers. Here is a sample:
 ```json
 {
     "domains": {
@@ -28,7 +28,7 @@ You will need to populate `SKYNAME_CONFIG` with a Base64 encoded JSON object to 
             "provider": "my-provider",
             "zoneId": "<cf_zone_id>",
             "disallowedSubdomains": [
-                "skyname"
+                "vheuel"
             ]
         }
     },
@@ -44,7 +44,7 @@ You will need to populate `SKYNAME_CONFIG` with a Base64 encoded JSON object to 
 }
 ```
 
-Once you have this file, save it to `config.json` and run the following command to copy the encoded Base64 string to clipboard so you can set as your `SKYNAME_CONFIG` environment variable:
+Once you have this file, save it to `config.json` and run the following command to copy the encoded Base64 string to clipboard so you can set as your `BIRU_CONFIG` environment variable:
 ```
 cat config.json | base64 | pbcopy -
 ```
