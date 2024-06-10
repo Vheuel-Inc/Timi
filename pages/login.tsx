@@ -152,7 +152,7 @@ export default function App() {
 							<p className="text-sm opacity-75 mb-2">Yang kami simpan hanyalah did (identifier) Anda, nama pengguna yang terdaftar (misalnya contoh.bsky.makeup) dan nama pengguna sebelumnya (misalnya @contoh.bsky.social). Dengan masuk di bawah ini, Anda menyetujui bahwa Anda tidak keberatan dengan hal ini.</p>
 							<Button onClick={login} disabled={!canLogin || isLoggingIn}>{isLoggingIn ? 'Masuk...' : 'Masuk'}</Button>
 							{loginError && (
-								<p className="text-red-500 mt-2">Error verifying details: {loginError.toString()}</p>
+								<p className="text-red-500 mt-2">Terjadi kesalahan saat memverifikasi Akun</p>
 							)}
 						</div>
 					)}
