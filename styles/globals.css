@@ -1,17 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-@layer utilities { 
-.bg-vul {
- background: linear-gradient(135deg, #4b8cfd 40%, #7791fd 60%); } } 
-
-
-
-@layer base {
-  
-  body {
-    background: linear-gradient(135deg, #4b8cfd 5%, #7791fd 20%, #7bf8ff 70%);
-    
-}
