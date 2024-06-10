@@ -158,6 +158,7 @@ Kami tidak menyimpan kredensial Bluesky Anda di server kami. Kredensial seperti
 					)}
 				</div>
 				
+				<p className="text-sm opacity-75 mt-3">Dibuat oleh <a href="https://bsky.app/profile/did:plc:ivvkfsndujdk2vo5zd2gn2e6">Vheüel</a> & <a href="https://t.me/blueskyindo">Friends</a> | <a href="https://cwallet.com/t/LRJVXY13">Donasi</a></p>
 			</div>
 		</div>
 	)
