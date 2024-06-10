@@ -147,9 +147,10 @@ export default function App() {
 <p className="text-xs opacity-75"><a href="https://bsky.app/settings/app-passwords" className="text-blue-500">Buat kata sandi aplikasi</a> untuk masuk</p>
 							<Input type="password" placeholder="Kata sandi aplikasi" value={password} onChange={e => setPassword(e.target.value)} />
 							<p className="text-sm font-semibold">Privacy</p>
-							<p className="text-sm opacity-75 mb-1">Skyname does not store any of your Bluesky credentials on its server. Credentials, such as your access token are stored locally and sent to the server for direct verification with your Bluesky server.</p>
-							<p className="text-sm opacity-75 mb-2">We only store is your did (identifier), registered username (e.g. example.tired.io) and previous username (e.g. @example.bsky.social). By logging in below, you agree that you're okay with this.</p>
-							<Button onClick={login} disabled={!canLogin || isLoggingIn}>{isLoggingIn ? 'Logging in...' : 'Login'}</Button>
+							<p className="text-sm opacity-75 mb-1">
+<span className="text-blue-500">BIRU</span> tidak menyimpan kredensial Bluesky Anda di server kami. Kredensial seperti token akses Anda disimpan secara lokal diperangkat anda dan hanya dikirimkan ke server untuk verifikasi langsung dengan server Bluesky Anda.</p>
+							<p className="text-sm opacity-75 mb-2">Yang kami simpan hanyalah did (identifier) Anda, nama pengguna yang terdaftar (misalnya contoh.bsky.makeup) dan nama pengguna sebelumnya (misalnya @contoh.bsky.social). Dengan masuk di bawah ini, Anda menyetujui bahwa Anda tidak keberatan dengan hal ini.</p>
+							<Button onClick={login} disabled={!canLogin || isLoggingIn}>{isLoggingIn ? 'Masuk...' : 'Masuk'}</Button>
 							{loginError && (
 								<p className="text-red-500 mt-2">Error verifying details: {loginError.toString()}</p>
 							)}
