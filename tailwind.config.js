@@ -6,9 +6,10 @@ module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}", 
-    // Or if using `src` directory:
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}"
   ],
   theme: {
     container: {
@@ -61,6 +62,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        'rounded': 'ui-rounded, "SF Pro Rounded", system-ui, san-serif'
       },
       keyframes: {
         "accordion-down": {
@@ -78,5 +80,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate")
+  ]
 }
