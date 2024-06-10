@@ -8,7 +8,7 @@ import Button from '../components/Button'
 import { useDomains, useUser } from '../utils/hooks'
 import Select from '../components/Select'
 
-const MAX_USERNAMES = 3
+const MAX_USERNAMES = 5
 
 export default function Index() {
 	const domains = useDomains()
