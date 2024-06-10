@@ -35,8 +35,8 @@ export default function({ Component, pageProps }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#7bf8ff" />
-        <meta name="theme-color" content="#7bf8ff" />
+        <meta name="msapplication-TileColor" content="#4b8cfd" />
+        <meta name="theme-color" content="#4b8cfd" />
       </Head>
       <Component {...pageProps} />
       <Analytics />
