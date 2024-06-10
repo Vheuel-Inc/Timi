@@ -148,7 +148,7 @@ export default function App() {
 							<Input type="password" placeholder="Kata sandi aplikasi" value={password} onChange={e => setPassword(e.target.value)} />
 							<p className="text-sm font-semibold text-red-500">Catatan</p>
 							<p className="text-sm opacity-75 mb-1">
-<span className="text-blue-500">BIRU</span> tidak menyimpan kredensial Bluesky Anda di server kami. Kredensial seperti token akses Anda disimpan secara lokal diperangkat anda dan hanya dikirimkan ke server untuk verifikasi langsung dengan server Bluesky Anda.</p>
+Kami tidak menyimpan kredensial Bluesky Anda di server kami. Kredensial seperti token akses Anda disimpan secara lokal diperangkat anda dan hanya dikirimkan ke server untuk verifikasi langsung dengan server Bluesky Anda.</p>
 							<p className="text-sm opacity-75 mb-2">Yang kami simpan hanyalah did (identifier) Anda, nama pengguna yang terdaftar (misalnya contoh.bsky.makeup) dan nama pengguna sebelumnya (misalnya @contoh.bsky.social). Dengan masuk di bawah ini, Anda menyetujui bahwa Anda tidak keberatan dengan hal ini.</p>
 							<Button onClick={login} disabled={!canLogin || isLoggingIn}>{isLoggingIn ? 'Masuk...' : 'Masuk'}</Button>
 							{loginError && (
