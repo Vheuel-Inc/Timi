@@ -14,21 +14,21 @@ export default function({ Component, pageProps }) {
 
         <title>Biru | Handle gratis untuk bluesky</title>
         <meta name="title" content="Biru" />
-        <meta name="description" content="Free, unique usernames for Bluesky—register in seconds." />
+        <meta name="description" content="Handle unik dan gratis untuk Bluesky." />
 
         {/* OpenGraph / FB */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://skyna.me/" />
+        <meta property="og:url" content="https://bsky.makeup/" />
         <meta property="og:title" content="biru" />
-        <meta property="og:description" content="Free, unique usernames for Bluesky—register in seconds." />
-        <meta property="og:image" content="https://skyna.me/banner.png" />
+        <meta property="og:description" content="Handle unik dan gratis untuk Bluesky" />
+        <meta property="og:image" content="https://bsky.makeup/banner.png" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://skyna.me/" />
+        <meta property="twitter:url" content="https://bsky.makeup/" />
         <meta property="twitter:title" content="Skyname" />
-        <meta property="twitter:description" content="Free, unique usernames for Bluesky—register in seconds." />
-        <meta property="twitter:image" content="https://skyna.me/banner.png" />
+        <meta property="twitter:description" content="Handle unik dan gratis untuk Bluesky"/>
+        <meta property="twitter:image" content="https://bsky.makeup/banner.png" />
           
         {/* Favicon */}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
