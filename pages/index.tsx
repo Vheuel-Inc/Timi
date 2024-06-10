@@ -224,7 +224,7 @@ export default function Index() {
 										</div>
 									)
 								})}
-								<p className="text-xs opacity-75 mt-2"><b>Tip</b>: jika Anda tidak menggunakan handle sebagai handle utama, handle yang telah Anda daftarkan akan tetap manuju ke akun Anda ketika diklik atau dimention! </p>
+								<p className="text-xs opacity-75 mt-2"><b>Tip</b>: jika Anda tidak menggunakan handle sebagai handle utama, handle yang telah Anda daftarkan akan tetap menuju ke akun Anda ketika diklik atau dimention! </p>
 <p className="text-xs opacity-75 mt-2"><b>Tip</b>: jika  Anda kesulitan menetapkan handle sebagai handle utama, Anda tetap dapat menetapkan handle yang terdaftar secara manual di aplikasi atau website Bluesky</p>
 							</>
 						) : (
