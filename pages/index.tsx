@@ -194,7 +194,7 @@ export default function Index() {
 				{defaultUsername && (
 					<div className={`bg-black/5 px-3 py-2 mb-2`}>
 						<p className="text-lg">{defaultUsername}</p>
-						<p className="text-sm">Handle sebelumnya</p>
+						<p className="text-sm">Handle saat ini</p>
 						<p className="text-sm">{defaultUsername === user.handle ? <a className="text-green-300">Aktif</a> : <a className={`font-semibold ${!!switchingToUsernameId ? 'cursor-not-allowed opacity-25' : 'hover:underline cursor-pointer text-blue-300'} ${switchingToUsernameId === 'default' ? 'cursor-wait' : ''}`} onClick={() => !!switchingToUsernameId ? {} : switchToUsername('default')}>{switchingToUsernameId === 'default' ? 'Mengganti...' : 'Tetapkan sebagai utama'}</a>}</p>
 					</div>
 				)}
