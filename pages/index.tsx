@@ -1,7 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+
 import axios from 'axios';
+
 import Input from '../components/Input';
 import Button from '../components/Button';
+
 import { useDomains, useUser } from '../utils/hooks';
 import Select from '../components/Select';
 
@@ -13,6 +16,7 @@ export default function Index() {
     const { user, fetchUser, credentials, logout } = useUser();
 
     const [usernames, setUsernames] = useState(null);
+
     const [subdomain, setSubdomain] = useState('');
     const [selectedDomain, setSelectedDomain] = useState('');
 
@@ -23,12 +27,18 @@ export default function Index() {
     const [releasingUsernameId, setReleasingUsername] = useState('');
     const [switchingToUsernameId, setSwitchingToUsernameId] = useState('');
 
+    /**
+     * Username Availability
+     */
     const [available, setAvailable] = useState(false);
     const [isCheckingAvailability, setCheckingAvailability] = useState(false);
     const checkAvailabilityTimeoutRef = useRef(null);
 
     const isUsernameValid = useMemo(() => subdomain.length > 0 && selectedDomain.length > 0, [subdomain, selectedDomain]);
 
+    /**
+     * Default Username
+     */
     const defaultUsername = useMemo(() => usernames?.[0]?.previousUsername || user?.handle, [usernames, user]);
 
     const fetchUsernames = useCallback(async () => {
@@ -38,9 +48,10 @@ export default function Index() {
                     Authorization: `Bearer ${credentials.accessToken}`
                 }
             });
+
             setUsernames(usernames);
-        } catch (error) {
-            console.error('Error fetching usernames:', error);
+        } catch {
+
         }
     }, [credentials]);
 
@@ -58,8 +69,8 @@ export default function Index() {
                 const { data } = await axios.post('/api/check', { username });
 
                 setAvailable(data.available);
-            } catch (error) {
-                console.error('Error checking username availability:', error);
+            } catch {
+
             } finally {
                 setCheckingAvailability(false);
             }
@@ -106,52 +117,50 @@ export default function Index() {
 
     return (
         <div>
-            <h1>Daftarkan Username</h1>
-            <Input 
-                value={subdomain}
-                onChange={e => setSubdomain(e.target.value)}
-                placeholder="Subdomain"
-            />
-            <Select 
-                options={domainsList}
-                value={selectedDomain}
-                onChange={e => setSelectedDomain(e.target.value)}
-                placeholder="Domain"
-            />
-            <div>
-                <p>
-                    Kami akan melakukan segala upaya untuk terus menghosting handle Anda di infrastruktur kami secara gratis selama kami bisa. Namun, tidak ada jaminan bahwa nama pengguna akan bertahan selamanya. Jika handle atau layanan Anda hilang, Anda selalu dapat mengubah nama pengguna Anda kembali di aplikasi Bluesky.
-                </p>
-                <div className="flex items-start mb-1">
-                    <input className="mt-[5px]" type="checkbox" checked={confirmed} onChange={e => setConfirmed(_confirmed => !_confirmed)} />
-                    <p className="ml-2 cursor-default" onClick={() => setConfirmed(_confirmed => !_confirmed)}>
-                        Saya menyadari dengan mendaftarkan <b>{username}</b> di <span className="text-blue-400">BIRU</span> dan mengklik tombol di bawah, saya mungkin kehilangan handle yang saya gunakan saat ini secara permanen, dan saya tidak dijamin akan menyimpan handle {username} selamanya.
-                    </p>
-                </div>
-            </div>
-            <Button 
-                className="w-full" 
-                onClick={registerUsername} 
-                disabled={!available || !isUsernameValid || !confirmed || isRegistering || isCheckingAvailability}
-            >
-                {isCheckingAvailability ? (
-                    `Cek ketersediaan untuk ${username}...`
-                ) : (
-                    isRegistering ? (
-                        `Mendaftarkan ${username}...`
-                    ) : (
-                        isUsernameValid ? (
-                            available ? (
-                                `Daftarkan ${username}`
+            {/* Konten lain yang tidak dihapus */}
+            {usernames && usernames.length < MAX_USERNAMES ? (
+                <div>
+                    <div>
+                        <Input value={subdomain} onChange={e => setSubdomain(e.target.value)} placeholder="Subdomain" />
+                        <Select options={domainsList} value={selectedDomain} onChange={e => setSelectedDomain(e.target.value)} placeholder="Domain" />
+                        <div>
+                            <p>Kami akan melakukan segala upaya untuk terus menghosting handle Anda di infrastruktur kami secara gratis selama kami bisa. Namun, tidak ada jaminan bahwa nama pengguna akan bertahan selamanya. Jika handle atau layanan Anda hilang, Anda selalu dapat mengubah nama pengguna Anda kembali di aplikasi Bluesky.</p>
+                            <div className="flex items-start mb-1">
+                                <input className="mt-[5px]" type="checkbox" checked={confirmed} onChange={e => setConfirmed(_confirmed => !_confirmed)} />
+                                <p className="ml-2 cursor-default" onClick={() => setConfirmed(_confirmed => !_confirmed)}>
+                                    Saya menyadari dengan mendaftarkan <b>{username}</b> di <span className="text-blue-400">BIRU</span> dan mengklik tombol di bawah, saya mungkin kehilangan handle yang saya gunakan saat ini secara permanen, dan saya tidak dijamin akan menyimpan handle {username} selamanya.
+                                </p>
+                            </div>
+                        </div>
+                        <Button 
+                            className="w-full" 
+                            onClick={registerUsername} 
+                            disabled={!available || !isUsernameValid || !confirmed || isRegistering || isCheckingAvailability}
+                        >
+                            {isCheckingAvailability ? (
+                                `Cek ketersediaan untuk ${username}...`
                             ) : (
-                                'Handle tidak tersedia'
-                            )
-                        ) : (
-                            'Pilih subdomain dan domain'
-                        )
-                    )
-                )}
-            </Button>
+                                isRegistering ? (
+                                    `Mendaftarkan ${username}...`
+                                ) : (
+                                    isUsernameValid ? (
+                                        available ? (
+                                            `Daftarkan ${username}`
+                                        ) : (
+                                            'Handle tidak tersedia'
+                                        )
+                                    ) : (
+                                        'Pilih subdomain dan domain'
+                                    )
+                                )
+                            )}
+                        </Button>
+                    </div>
+                </div>
+            ) : (
+                <p>Anda telah mencapai maksimal jumlah handle yang bisa diklaim</p>
+            )}
+            {/* Konten lain yang tidak dihapus */}
         </div>
     );
 }
