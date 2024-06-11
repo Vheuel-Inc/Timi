@@ -278,13 +278,6 @@ export default function Index() {
 										<input className="mt-[5px]" type="checkbox" checked={confirmed} onChange={e => setConfirmed(_confirmed => !_confirmed)}></input>
 										<p className="ml-2 cursor-default" onClick={() => setConfirmed(_confirmed => !_confirmed)}>Saya menyadari dengan mendaftarkan <b>{username}</b> di <span className="text-blue-400">BIRU</span> dan mengklik tombol di bawah, saya mungkin kehilangan handle yang saya gunakan saat ini secara permanen, dan saya tidak dijamin akan menyimpan handle {username} selamanya. </p>
 									</div>
-									<div className="flex items-start mb-2">
-										<input className="mt-[5px]" type="checkbox" checked={setAsPrimaryUsername} onChange={e => setSetAsPrimaryUsername(_primary => !_primary)}></input>
-										<div className="ml-2  cursor-default" onClick={() => setSetAsPrimaryUsername(_primary => !_primary)}>
-											<p>Gunakan sebagai handle utama</p>
-											<p className="text-xs">Otomatis gunakan <b>{username}</b> sebagai handle utama anda di Bluesky. Ini akan terlihat di profil Anda. Handle yang terdaftar disini akan selalu menuju ke akun Anda saat diklik atau dimention, meskipun tidak ditetapkan sebagai handle utama</p>
-										</div>
-									</div>
 								</div>
 							)}
 							<Button className="w-full" onClick={registerUsername} disabled={!available || !isUsernameValid ||!confirmed || isRegistering || isCheckingAvailability}>
