@@ -93,34 +93,30 @@ export default function Index() {
         checkAvailabilityTimeoutRef.current = setTimeout(checkUsername, 500)
     }, [subdomain, selectedDomain])
 
-    const registerUsername = useCallback(async () => {
-        setRegistering(true)
+const registerUsername = useCallback(async () => {
+    setRegistering(true);
+    try {
+        await axios.post('/api/register', {
+            domain: selectedDomain,
+            subdomain,
+            setAsPrimaryUsername
+        }, {
+            headers: {
+                Authorization: `Bearer ${credentials.accessToken}`
+            }
+        });
+        setConfirmed(false);
+        setSetAsPrimaryUsername(true);
+        setSubdomain('');
+        setSelectedDomain('');
+        fetchUser(); // also calls fetchUsernames
+        window.location.reload(); // refresh the page
+    } catch (error) {
+        console.error(error);
+    }
+    setRegistering(false);
+}, [subdomain, selectedDomain, setAsPrimaryUsername, credentials, fetchUser]);
 
-        try {
-            await axios.post('/api/register', {
-                domain: selectedDomain,
-                subdomain,
-                setAsPrimaryUsername
-            }, {
-                headers: {
-                    Authorization: `Bearer ${credentials.accessToken}`
-                }
-            })
-
-            setConfirmed(false)
-            setSetAsPrimaryUsername(true)
-
-            setSubdomain('')
-            setSelectedDomain('')
-
-            await fetchUser() // also calls fetchUsernames
-            window.location.reload() // Refresh the page
-        } catch {
-
-        }
-
-        setRegistering(false)
-    }, [subdomain, selectedDomain, credentials])
 
     const switchToUsername = useCallback(async (id) => {
         setSwitchingToUsernameId(id)
