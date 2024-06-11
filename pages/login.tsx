@@ -111,7 +111,7 @@ export default function App() {
 	}, [server, email, password, setSession, setUser, setLoggingIn, setLoginError])
 
 	return (
-		<div className="max-w-sm mx-auto w-screen h-screen flex flex-col items-center my-5">
+		<div className="w-screen h-screen flex flex-col items-center my-5">
 			<div className="flex flex-col mx-5 md:w-1/2 xl:w-1/3 overflow-scroll">
 				<div className="flex flex-row mb-1">
 					<div>
