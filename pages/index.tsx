@@ -275,7 +275,7 @@ export default function Index() {
 									</div>
 									<div className="flex items-start mb-1">
 										<input className="mt-[5px]" type="checkbox" checked={confirmed} onChange={e => setConfirmed(_confirmed => !_confirmed)}></input>
-										<p className="ml-2 cursor-default" onClick={() => setConfirmed(_confirmed => !_confirmed)}>Saya menyadari dengan mendaftarkan <b>{username}</b> di <span className="text-blue-400">BIRU</span> dan mengklik tombol di bawah, saya mungkin kehilangan handle yang saya gunakan saat ini secara permanen, dan saya tidak dijamin akan menyimpan handle {username} selamanya. </p>
+										<p className="ml-2 cursor-default" onClick={() => setConfirmed(_confirmed => !_confirmed)}>Saya menyadari dengan mendaftarkan <b>{username}</b> di <span className="text-blue-400">BIRU</span> dan mengklik tombol di bawah, saya mungkin kehilangan handle yang saya gunakan saat ini secara permanen dan saya tidak dijamin akan menyimpan handle {username} selamanya. </p>
 									</div>
 
 
