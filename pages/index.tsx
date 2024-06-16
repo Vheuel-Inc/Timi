@@ -276,9 +276,8 @@ const registerUsername = useCallback(async () => {
 
     
 									</div>
-								</div><div>					
+								</div>
 <p className="mt-4 text-xs opacity-75 mt-2"><b className="text-green-500">Tip</b> Jika anda sudah memilih dan menekan tombol <b>daftarkan</b> namun tombol tidak berfungsi, refresh saja halamannya </p>
-</div>
 							)}
 	
 	<Button className="w-full" onClick={registerUsername} disabled={!available || !isUsernameValid ||!confirmed || isRegistering || isCheckingAvailability}>
