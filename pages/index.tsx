@@ -274,11 +274,14 @@ const registerUsername = useCallback(async () => {
 										<input className="mt-[5px]" type="checkbox" checked={confirmed} onChange={e => setConfirmed(_confirmed => !_confirmed)}></input>
 										<p className="ml-2 cursor-default" onClick={() => setConfirmed(_confirmed => !_confirmed)}>Saya menyadari dengan mendaftarkan <b>{username}</b> di <span className="text-blue-400">BIRU</span> dan mengklik tombol di bawah, saya mungkin kehilangan handle yang saya gunakan saat ini secara permanen, dan saya tidak dijamin akan menyimpan handle {username} selamanya. </p>
 
-    <p className="mt-4 text-xs opacity-75 mt-2"><b className="text-green-500">Tip</b> Jika anda sudah memilih dan menekan tombol <b>daftarkan</b> namun tombol tidak berfungsi, refresh saja halamannya :)</p>
+    
 									</div>
 								</div>
 							)}
-							<Button className="w-full" onClick={registerUsername} disabled={!available || !isUsernameValid ||!confirmed || isRegistering || isCheckingAvailability}>
+	<div>					
+<p className="mt-4 text-xs opacity-75 mt-2"><b className="text-green-500">Tip</b> Jika anda sudah memilih dan menekan tombol <b>daftarkan</b> namun tombol tidak berfungsi, refresh saja halamannya :)</p>
+</div>
+	<Button className="w-full" onClick={registerUsername} disabled={!available || !isUsernameValid ||!confirmed || isRegistering || isCheckingAvailability}>
 								{(isCheckingAvailability ? (
 									`Cek ketersediaan untuk ${username}...`
 								) : (
