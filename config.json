@@ -21,6 +21,13 @@
                 "vheuel"
             ]
         },
+        "tired.baby": {
+            "provider": "tired_baby",
+            "zoneId": "4202a272aa1f93873f661778e1574f9d",
+            "disallowedSubdomains": [
+                "vheuel"
+            ]
+        },
         "skeets.top": {
             "provider": "skeets_top",
             "zoneId": "06f0642e59242f820d16231e2dab9b6b",
@@ -47,6 +54,13 @@
         "fess_fun": {
             "service": "cloudflare",
             "token": "PTalbsrfMCyLTIXteCJYopKikhM20bo1mfZgL0Qe",
+            "attestation": {
+                "verified": true
+            }
+        },
+        "tired_baby": {
+            "service": "cloudflare",
+            "token": "QX3jLQda_zRk7H0IWCmbpJF41nj5AJKWvwGBui-1",
             "attestation": {
                 "verified": true
             }
