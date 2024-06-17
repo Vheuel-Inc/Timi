@@ -27,6 +27,13 @@
             "disallowedSubdomains": [
                 "vheuel"
             ]
+           },
+        "mlbb.skin": {
+            "provider": "mlbb_skin",
+            "zoneId": "be9aae6e73023aa05f747387637df20f",
+            "disallowedSubdomains": [
+                "vheuel"
+            ]
         },
         "skeets.top": {
             "provider": "skeets_top",
@@ -61,6 +68,13 @@
         "tired_baby": {
             "service": "cloudflare",
             "token": "QX3jLQda_zRk7H0IWCmbpJF41nj5AJKWvwGBui-1",
+            "attestation": {
+                "verified": true
+            }
+        },
+        "mlbb_skin": {
+            "service": "cloudflare",
+            "token": "n6Lf1OfvVSokQdgWxCwwy8IYWmgVZNT8Oh5htt04",
             "attestation": {
                 "verified": true
             }
