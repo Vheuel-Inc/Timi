@@ -158,7 +158,7 @@ Kami tidak menyimpan kredensial Bluesky Anda di server kami. Kredensial seperti
 					)}
 				</div>
 				
-				<p className="text-sm opacity-75 mt-3">Dibuat oleh <a href="https://bsky.app/profile/did:plc:ivvkfsndujdk2vo5zd2gn2e6" className="text-blue-500">Vheüel</a> & <a href="https://t.me/blueskyindo" className="text-blue-500">Friends</a><br/>Donation <a href="https://saweria.co/vheuel" className="text-blue-500">Saweria</a> | <a href="https://cwallet.com/t/LRJVXY13" className="text-blue-500">Crypto</a></p>
+				<p className="text-sm opacity-75 mt-3">Dibuat oleh <a href="https://bsky.app/profile/did:plc:ivvkfsndujdk2vo5zd2gn2e6" className="text-blue-500">Vheüel</a> & <a href="https://t.me/blueskyindo" className="text-blue-500">Friends</a><br/>Donation <a href="https://saweria.co/vheuel" className="text-blue-500">Saweria</a> · <a href="https://cwallet.com/t/LRJVXY13" className="text-blue-500">Crypto</a></p>
 			</div>
 		</div>
 	)
