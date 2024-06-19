@@ -1,10 +1,10 @@
 {
-  "name": "biru",
+  "name": "Timi",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "description": "Handle unik dan gratis untuk Bluesky",
-  "repository": "https://github.com/vheuel/biru.git",
+  "description": "Mesin waktu",
+  "repository": "https://github.com/vheuel-inc/timi.git",
   "author": "Vheuel Roman <contact@vheuel.com>",
   "scripts": {
     "start": "next start",
