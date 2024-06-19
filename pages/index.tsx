@@ -1,77 +1,78 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import axios from 'axios';
-import { BskyAgent, RichText } from '@atproto/api';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import { useDomains, useUser } from '../utils/hooks';
-import Select from '../components/Select';
+import { BskyAgent, RichText } from '@atproto/api';
 
-const CreatePost = () => {
-  const [content, setContent] = useState('');
-  const [date, setDate] = useState('');
-  const [loading, setLoading] = useState(false);
+export default function Index() {
+    const { user, fetchUser, credentials, logout } = useUser();
 
-  const handleSubmit = useCallback(async (event) => {
-    event.preventDefault();
-    setLoading(true);
+    const [postContent, setPostContent] = useState('');
+    const [postDate, setPostDate] = useState('');
 
-    try {
-      const agent = new BskyAgent({ service: 'https://bsky.social' });
-      await agent.login({ identifier: process.env.BSKY_USERNAME!, password: process.env.BSKY_PASSWORD! });
+    const createPost = useCallback(async () => {
+        const agent = new BskyAgent({ service: 'https://bsky.social' });
 
-      const rt = new RichText({ text: content });
-      await rt.detectFacets(agent);
+        await agent.login({
+            identifier: credentials.username,
+            password: credentials.password,
+        });
 
-      const createdAt = new Date(date);
+        const rt = new RichText({ text: postContent });
+        await rt.detectFacets(agent);
 
-      const post = {
-        $type: 'app.bsky.feed.post',
-        text: rt.text,
-        facets: rt.facets,
-        createdAt: createdAt.toISOString(),
-      };
+        const createdAt = new Date(postDate);
 
-      const response = await agent.api.app.bsky.feed.post.create(
-        { repo: agent.session!.did },
-        post
-      );
+        const post = {
+            $type: 'app.bsky.feed.post',
+            text: rt.text,
+            facets: rt.facets,
+            createdAt: createdAt.toISOString(),
+        };
 
-      console.log('Post created with URI:', response.uri);
-      alert('Post created successfully!');
-    } catch (error) {
-      console.error('Error creating post:', error);
-      alert('Failed to create post.');
-    } finally {
-      setLoading(false);
-    }
-  }, [content, date]);
+        const response = await agent.api.app.bsky.feed.post.create(
+            { repo: agent.session!.did },
+            post
+        );
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="content">Post Content:</label>
-        <Input
-          id="content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="date">Date (YYYY-MM-DD):</label>
-        <Input
-          id="date"
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          required
-        />
-      </div>
-      <Button type="submit" disabled={loading}>
-        {loading ? 'Posting...' : 'Create Post'}
-      </Button>
-    </form>
-  );
-};
+        console.log('Post created with URI:', response.uri);
+    }, [postContent, postDate, credentials]);
 
-export default CreatePost;
+    if (!user) return <></>;
+
+    return (
+        <div className="w-screen h-screen flex flex-col items-center px-3 py-2 my-5">
+            <div className="flex flex-col mx-5 md:w-1/2 xl:w-1/3 overflow-scroll">
+                <div className="mx-3 my-2 flex flex-row mb-5">
+                    <div>
+                        <p className="text-3xl text-blue-100 font-bold">BIRU</p>
+                        <p>Handle unik dan gratis untuk Bluesky</p>
+                    </div>
+                    <div className="flex-grow" />
+                    <img
+                        src={user.avatar}
+                        className="h-10 rounded-full cursor-pointer"
+                        onClick={() => {
+                            if (!confirm('Keluarkan Akun?')) return;
+                            logout();
+                        }}
+                    />
+                </div>
+                <Input
+                    label="Post Content"
+                    value={postContent}
+                    onChange={(e) => setPostContent(e.target.value)}
+                />
+                <Input
+                    label="Post Date (YYYY-MM-DDTHH:MM:SSZ)"
+                    value={postDate}
+                    onChange={(e) => setPostDate(e.target.value)}
+                />
+                <Button onClick={createPost} disabled={!postContent || !postDate}>
+                    Create Post
+                </Button>
+            </div>
+        </div>
+    );
+}
