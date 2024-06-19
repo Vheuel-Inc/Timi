@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 import axios from 'axios';
 import Input from '../components/Input';
 import Button from '../components/Button';
-import { useDomains, useUser } from '../utils/hooks';
+import { useUser } from '../utils/hooks';
 import { BskyAgent, RichText } from '@atproto/api';
 
 export default function Index() {
@@ -10,33 +10,42 @@ export default function Index() {
 
     const [postContent, setPostContent] = useState('');
     const [postDate, setPostDate] = useState('');
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
 
     const createPost = useCallback(async () => {
-        const agent = new BskyAgent({ service: 'https://bsky.social' });
+        setError(null);
+        setSuccess(null);
+        try {
+            const agent = new BskyAgent({ service: 'https://bsky.social' });
 
-        await agent.login({
-            identifier: credentials.username,
-            password: credentials.password,
-        });
+            await agent.login({
+                identifier: credentials.username,
+                password: credentials.password,
+            });
 
-        const rt = new RichText({ text: postContent });
-        await rt.detectFacets(agent);
+            const rt = new RichText({ text: postContent });
+            await rt.detectFacets(agent);
 
-        const createdAt = new Date(postDate);
+            const createdAt = new Date(postDate);
 
-        const post = {
-            $type: 'app.bsky.feed.post',
-            text: rt.text,
-            facets: rt.facets,
-            createdAt: createdAt.toISOString(),
-        };
+            const post = {
+                $type: 'app.bsky.feed.post',
+                text: rt.text,
+                facets: rt.facets,
+                createdAt: createdAt.toISOString(),
+            };
 
-        const response = await agent.api.app.bsky.feed.post.create(
-            { repo: agent.session!.did },
-            post
-        );
+            const response = await agent.api.app.bsky.feed.post.create(
+                { repo: agent.session!.did },
+                post
+            );
 
-        console.log('Post created with URI:', response.uri);
+            setSuccess('Post created successfully with URI: ' + response.uri);
+        } catch (error) {
+            console.error('Error creating post:', error);
+            setError('Failed to create post. Please check the inputs and try again.');
+        }
     }, [postContent, postDate, credentials]);
 
     if (!user) return <></>;
@@ -72,6 +81,8 @@ export default function Index() {
                 <Button onClick={createPost} disabled={!postContent || !postDate}>
                     Create Post
                 </Button>
+                {error && <p className="text-red-500 mt-2">{error}</p>}
+                {success && <p className="text-green-500 mt-2">{success}</p>}
             </div>
         </div>
     );
